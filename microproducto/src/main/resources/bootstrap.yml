@@ -1,0 +1,23 @@
+spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+  application:
+    name: producto.service
+
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+    config:
+      label: main
+      enabled: true
+      uri: http://localhost:4444
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    
+ribbon:
+  eureka:
+    enabled: true

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eureka-server
+  config:
+    import:
+      configserver:
+        http://localhost:4444
+
+  cloud:
+    config:
+      label: main
+      enabled: true
+      uri: http://localhost:4444
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

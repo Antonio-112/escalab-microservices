@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Antonio-112/ConfigServerTest.git
+          default-label: main
+          repos:
+            development:
+                pattern:
+                  - '*/dev'
+                uri: https://github.com/Antonio-112/ConfigServerDev.git
+                default-label: main
+                clone-on-start: true
+                          
+#Servidor HTTP
+
+server:
+  port: 4444
