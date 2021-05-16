@@ -1,6 +1,7 @@
 package com.anto.microproducto.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -14,10 +15,10 @@ public class ProductoService implements IProducto {
 
 	@Autowired
 	ProductoRepository productoRepo;
-	
+
 	@Autowired
 	Environment env;
-	
+
 	@Override
 	public List<Producto> listAllProductos() {
 		return productoRepo.findAll();
@@ -26,13 +27,16 @@ public class ProductoService implements IProducto {
 	@Override
 	public Producto getProductoById(String idProducto) {
 		Producto producto = new Producto();
-		producto.setCodigoId(productoRepo.findById(idProducto).get().getCodigoId());
-		producto.setDescripcion(productoRepo.findById(idProducto).get().getDescripcion());
-		producto.setMarca(productoRepo.findById(idProducto).get().getMarca());
-		producto.setNombre(productoRepo.findById(idProducto).get().getNombre());
-		producto.setPrecioUnitario(productoRepo.findById(idProducto).get().getPrecioUnitario());
-		producto.setUnidades(productoRepo.findById(idProducto).get().getUnidades());
+		Optional<Producto> optProducto = productoRepo.findById(idProducto);
+
+		producto.setCodigoId(optProducto.get().getCodigoId());
+		producto.setDescripcion(optProducto.get().getDescripcion());
+		producto.setMarca(optProducto.get().getMarca());
+		producto.setNombre(optProducto.get().getNombre());
+		producto.setPrecioUnitario(optProducto.get().getPrecioUnitario());
+		producto.setUnidades(optProducto.get().getUnidades());
 		producto.setPort(env.getProperty("local.server.port"));
+
 		return producto;
 	}
 
