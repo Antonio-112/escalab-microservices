@@ -34,11 +34,11 @@ public class UserController {
 		return principal.getName();
 	}
 
-	@PreAuthorize("#oauth2.hasScope('write')")
-	@GetMapping("/scope")
-	public String prueba() {
-		return "Pasamos la prueba";
-	}
+//	@PreAuthorize("#oauth2.hasScope('write')")
+//	@GetMapping("/scope")
+//	public String prueba() {
+//		return "Pasamos la prueba";
+//	}
 
 	@GetMapping("/tokens")
 	public List<String> getTokens(String client_id, String user) {

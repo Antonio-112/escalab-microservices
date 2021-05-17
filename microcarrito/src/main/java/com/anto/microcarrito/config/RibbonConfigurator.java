@@ -3,15 +3,21 @@ package com.anto.microcarrito.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.netflix.loadbalancer.AvailabilityFilteringRule;
+import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.PingUrl;
 
 @Configuration
 public class RibbonConfigurator {
     
     @Bean
     public IRule ribbonRule() {
-    	IRule rule = new AvailabilityFilteringRule();
-    	return rule;
+    	return new RoundRobinCustomizedRule();
     }
+    @Bean
+    public IPing ribbonPing() {
+        return new PingUrl();
+    }
+    
+    
 }
