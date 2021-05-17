@@ -1,50 +1,13 @@
-
-#spring:
- # application:
-  #  name: micro.uaa
-
-  #cloud:
-   # config:
-    #  label: main
-     # enabled: true
-     # uri: http://localhost:4444
-#eureka:
- # client:
-  #  register-with-eureka: false
-   # fetch-registry: false
-   
 spring:
   application:
     name: micro.uaa
-  jpa:
-    hibernate:
-      ddl-auto: none
-  datasource: 
-    url:  jdbc:mysql://localhost:3306/jdbc_authentication
-    username: root
-    password: Miawmiaw321*
-    initialization-mode: never
-    
-server:
-  port: 7777
-  
+
+  cloud:
+    config:
+      label: main
+      enabled: true
+      uri: http://localhost:4444
 eureka:
   client:
-    service-url:
-      default-zone: http://localhost:8761/eureka/
-
-security:
-  oauth2:
-    client:
-      client-id: antonio
-      client-secret: elsecreto
-
-
-config:
-  security:
-    oauth:
-      client:
-        id: app
-        secret: elsecreto
-      jwt:
-        key: 123
+    register-with-eureka: false
+    fetch-registry: false
