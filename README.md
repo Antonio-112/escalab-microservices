@@ -40,6 +40,14 @@
 	<li>Netflix Zuul</li>
 	<li>Spring Security</li>
 </ul>
+<h2>Recomendaciones para el Uso del Proyecto</h2>
+<p>Para que puedas sacar el máximo provecho de este proyecto, te recomendamos lo siguiente:</p>
+<ul>
+	<li>Es importante familiarizarse con las tecnologías mencionadas anteriormente antes de sumergirse en la ejecución del proyecto.</li>
+	<li>Para un rendimiento óptimo, asegúrate de tener una máquina con al menos 8GB de RAM y un procesador decente. Estos servicios pueden consumir una cantidad significativa de recursos, especialmente si todos se están ejecutando al mismo tiempo.</li>
+	<li>Si te encuentras con problemas al ejecutar los microservicios, no dudes en abrir un issue en este repositorio y estaremos encantados de ayudarte.</li>
+	<li>Asegúrate de tener una buena comprensión de cómo funciona cada microservicio y cómo interactúa con los demás. Esto te ayudará a resolver cualquier problema que puedas encontrar y te permitirá hacer uso de las funciones de manera más efectiva.</li>
+</ul>
 <h2>Cómo Ejecutar el Proyecto</h2>
 <ol>
 	<li>Haz un fork o clona el repositorio en tu máquina local</li>
